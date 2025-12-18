@@ -22,12 +22,12 @@ local function updateHighlight(player)
     local character = player.Character
     if not character then return end
 
-    local highlight = character:FindFirstChild("KnifeHighlight")
+    local highlight = character:FindFirstChild("MurderHighlight")
 
     if hasTool(player) then
         if not highlight then
             highlight = Instance.new("Highlight")
-            highlight.Name = "KnifeHighlight"
+            highlight.Name = "MurderHighlight"
             highlight.FillColor = Color3.fromRGB(255, 0, 0)
             highlight.OutlineColor = Color3.fromRGB(255, 0, 0)
             highlight.FillTransparency = 0.4
