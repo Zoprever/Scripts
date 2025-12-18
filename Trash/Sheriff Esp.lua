@@ -29,7 +29,7 @@ local function updateHighlight(player)
             highlight = Instance.new("Highlight")
             highlight.Name = "SheriffHighlight"
             highlight.FillColor = Color3.fromRGB(0, 0, 255)
-            highlight.OutlineColor = Color3.fromRGB(255, 0, 0)
+            highlight.OutlineColor = Color3.fromRGB(0, 0, 255)
             highlight.FillTransparency = 0.4
             highlight.OutlineTransparency = 0
             highlight.Adornee = character
