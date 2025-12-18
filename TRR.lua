@@ -12,7 +12,7 @@ local SupplyColor = Color3.fromRGB(0, 0, 255)
 local ScrapColor = Color3.fromRGB(0, 255, 0)
 
 -- Functions
-function AddHighlight(Paremt, Color)
+function AddHighlight(Parent, Color)
   Highlight = Instance.new("Highlight")
   Highlight.FillColor = Color
   Highlight.OutlineColor = Color
@@ -24,7 +24,7 @@ end
 
 function HighlightObject(Name, Color)
   local Object = Workspace:FindFirstChild(Name)
-  if Object and not RakeObject:FindFirstChild("Highlight") then
+  if Object and not Object:FindFirstChild("Highlight") then
     AddHighlight(Object, Color)
   end
 end
@@ -38,7 +38,7 @@ function HighlightObjects(Parent, Name, Color)
 end
 -- Add Highlights --
 while true do
-  task.wait(0.1)
+  task.wait(1)
   HighlightObject("Rake", RakeColor)
   HighlightObject("FlareGunPickUp", FlareColor)
   HighlightObjects(SupplyCrates, "Box", SupplyColor)
