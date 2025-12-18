@@ -3,31 +3,45 @@
 -- Original Creator: Zoprever --
 
 -- Variables --
-local Workspace = game. Workspace
+local Workspace = game.Workspace
+local SupplyCrates = Workspace.Debris.SupplyCrates
+local ScrapSpawns = Workspace.Filter.ScrapSpawns
 local RakeColor = Color3.fromRGB(255, 0, 0)
 local FlareColor = Color3.fromRGB(255, 255, 0)
 local SupplyColor = Color3.fromRGB(0, 0, 255)
 local ScrapColor = Color3.fromRGB(0, 255, 0)
 
 -- Functions
-function AddHighlight(paremt, Color)
+function AddHighlight(Paremt, Color)
   Highlight = Instance.new("Highlight")
   Highlight.FillColor = Color
   Highlight.OutlineColor = Color
   Highlight.FillTransparency = 0.5
   Highlight.OutlineTransparency = 0
-  Highlight.Adornee = parent
-  Highlight.Parent = parent
-  return Highlight
+  Highlight.Adornee = Parent
+  Highlight.Parent = Parent
 end
 
-function HighlightObject(Object, Color)
-  if Workspace[Object] then
-    local ObjectV2 = Workspace[Object]
-    if not ObjectV2.Highlight then
-      AddHighlight(ObjectV2, Color)
+function HighlightObject(Name, Color)
+  local Object = Workspace:FindFirstChild(Name)
+  if Object and not RakeObject:FindFirstChild("Highlight") then
+    AddHighlight(Object, Color)
+  end
+end
+
+function HighlightObjects(Parent, Name, Color)
+  for _, Object in ipairs(Parent:GetDescendants()) do
+    if Object.Name == Name and not Object:FindFirstChild("Highlight") then
+      AddHighlight(Object, Color)
     end
   end
 end
--- Add Highlight On Rake --
-HighlightObject(Rake, RakeColor)
+-- Add Highlights --
+while true do
+  task.wait(0.1)
+  HighlightObject("Rake", RakeColor)
+  HighlightObject("FlareGunPickUp", FlareColor)
+  HighlightObjects(SupplyCrates, "Box", SupplyColor)
+  HighlightObjects(ScrapSpawns, "Scrap", ScrapColor)
+end
+
