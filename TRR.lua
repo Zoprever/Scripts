@@ -14,6 +14,7 @@ local ScrapColor = Color3.fromRGB(0, 255, 0)
 -- Functions
 function AddHighlight(Parent, Color)
   local Highlight = Instance.new("Highlight")
+  Highlight.Name = "Highlight"
   Highlight.FillColor = Color
   Highlight.OutlineColor = Color
   Highlight.FillTransparency = 0.5
