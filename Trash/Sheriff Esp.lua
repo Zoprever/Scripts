@@ -2,14 +2,13 @@ local Players = game:GetService("Players")
 local TOOL_NAME = "Gun"
 
 local function hasTool(player)
-    -- Backpack
-    local backpack = player:FindFirstChild("Backpack", 0.1)
+    local backpack = player:WaitForChild("Backpack", 0.1)
     if backpack and backpack:FindFirstChild(TOOL_NAME) then
         return true
     end
 
-    -- Equipped
-    if player.Character and player.Character:FindFirstChild(TOOL_NAME) then
+    local character = player.Character
+    if character and character:FindFirstChild(TOOL_NAME) then
         return true
     end
 
