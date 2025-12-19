@@ -3,7 +3,7 @@ local TOOL_NAME = "Gun"
 
 local function hasTool(player)
     -- Backpack
-    local backpack = player:FindFirstChild("Backpack")
+    local backpack = player:FindFirstChild("Backpack", 0.1)
     if backpack and backpack:FindFirstChild(TOOL_NAME) then
         return true
     end
