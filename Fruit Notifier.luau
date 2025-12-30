@@ -28,4 +28,10 @@ TL.Text = "Fruit"
 TL.TextColor3 = Color3.FromRGB(0, 0, 0)
 TL.TextSize = 10
 TL.Parent = F
+-- Actual Works --
 while task.wait(1) do
+if FruitExisting() then
+F.Color3.FromRGB(0, 0, 255)
+else
+F.Color3.FromRGB(255, 0, 0)
+end
