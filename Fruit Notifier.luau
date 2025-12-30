@@ -9,7 +9,8 @@ local function FruitExisting()
 	for _, v in ipairs(Workspace:GetChildren()) do  
 		if v:IsA("Tool") then
 			return true
-elseif v.Name == "Fruit"
+elseif v.Name == "Fruit" then
+return true
 		end  
 	end  
 	return false  
