@@ -21,7 +21,7 @@ FN.Parent = game.CoreGui
 
 local F = Instance.new("Frame")  
 F.Draggable = true
-F.Position = UDim2.new(1, 0, 0, 0)
+F.Position = UDim2.new(0.93, 0, 0, 0)
 F.Size = UDim2.new(0, 50, 0, 50)  
 F.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 F.Parent = FN  
