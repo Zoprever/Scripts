@@ -14,9 +14,10 @@ local function FruitExisting()
 end
 -- Start
 local FN = Instance.new("ScreenGui")
-FN.Name = FruitNotifier
+FN.Name = "FruitNotifier"
 FN.Parent = game.CoreGui
 local F = Instance.new("Frame")
+F.Draggable = true
 F.Size = UDim2.new(0, 50, 0, 50)
 F.Parent = FN
 local UC = Instance.new("UICorner")
@@ -31,7 +32,8 @@ TL.Parent = F
 -- Actual Works --
 while task.wait(1) do
 if FruitExisting() then
-F.Color3.FromRGB(0, 0, 255)
+F.BackgroundColor3 = Color3.FromRGB(0, 0, 255)
 else
-F.Color3.FromRGB(255, 0, 0)
+F.BackgroundColor3 = Color3.FromRGB(255, 0, 0)
+end
 end
