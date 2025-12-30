@@ -13,8 +13,19 @@ local function FruitExisting()
   return false
 end
 -- Start
-local FN = instance.new("ScreenGui")
+local FN = Instance.new("ScreenGui")
 FN.Name = FruitNotifier
-FN.Parent = game.CoreUi
-local F = instance.new("Frame")
-F.Size = {0, 50}, {0,50}
+FN.Parent = game.CoreGui
+local F = Instance.new("Frame")
+F.Size = UDim2.new(0, 50, 0, 50)
+F.Parent = FN
+local UC = Instance.new("UICorner")
+UC.CornerRadius = UDim.new(1, 0)
+UC.Parent = F
+local TL = Instance.new("TextLabel")
+TL.Position = UDim2.new(0.5, 0, 0.5, 0)
+TL.Text = "Fruit"
+TL.TextColor3 = Color3.FromRGB(0, 0, 0)
+TL.TextSize = 10
+TL.Parent = F
+while task.wait(1) do
