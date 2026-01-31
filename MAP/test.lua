@@ -24,8 +24,18 @@ TB3.Position = UDim2.new(0, 25, 0, 185)
 TB3.BackgroundTransparency = 0.5
 TB3.Parent = ScreenGui.Window
 
-IB.InputBegan:Connect(function(input)
-	if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-		
-	end
-end)
+local function WriteVars()
+    local Content = [[Vars = {
+type = "]] .. TB.Text .. [["
+player = "]] .. TB2.Text .. [["
+target = "]] .. TB3.Text .. [["
+}]]
+    
+    writefile("ZorexSystem/Bridge/Vars.lua", Content)
+end
+
+-- PC
+IB.MouseButton1Click:Connect(WriteVars)
+
+-- Mobile / Touch
+IB.TouchTap:Connect(WriteVars)
