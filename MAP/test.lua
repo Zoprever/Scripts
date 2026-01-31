@@ -23,3 +23,9 @@ TB3.Size = UDim2.new(0, 370, 0, 50)
 TB3.Position = UDim2.new(0, 25, 0, 185)
 TB3.BackgroundTransparency = 0.5
 TB3.Parent = ScreenGui.Window
+
+IB.InputBegan:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+		
+	end
+end)
