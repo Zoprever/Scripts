@@ -7,3 +7,4 @@ IB.Image = getcustomasset("ZorexSystem/Assets/Execute.png")
 IB.Parent = ScreenGui.Window
 local UC = Instance.new("UICorner")
 UC.CornerRadius = UDim.new(1, 0)
+UC.Parent = IB
