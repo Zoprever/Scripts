@@ -26,8 +26,8 @@ TB3.Parent = ScreenGui.Window
 
 local function WriteVars()
     local Content = [[Vars = {
-type = "]] .. TB.Text .. [["
-player = "]] .. TB2.Text .. [["
+type = "]] .. TB.Text .. [[",
+player = "]] .. TB2.Text .. [[",
 target = "]] .. TB3.Text .. [["
 }]]
     
