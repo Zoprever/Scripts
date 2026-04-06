@@ -39,7 +39,7 @@ function HighlightObjects(Parent, Name, Color)
   end
 end
 -- Add Highlights --
-while wait(1) do
+while wait(0.1) do
   HighlightObject("Rake", RakeColor)
   HighlightObject("FlareGunPickUp", FlareColor)
   HighlightObjects(SupplyCrates, "Box", SupplyColor)
