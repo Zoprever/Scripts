@@ -3,13 +3,14 @@
 -- Original Creator: Zoprever --
 
 -- Variables --
-local Workspace = game.Workspace
-local SupplyCrates = Workspace.Debris.SupplyCrates
-local ScrapSpawns = Workspace.Filter.ScrapSpawns
+local SupplyCrates = workspace.Debris.SupplyCrates
+local ScrapSpawns = workspace.Filter.ScrapSpawns
+local Players = game.Players
 local RakeColor = Color3.fromRGB(255, 0, 0)
 local FlareColor = Color3.fromRGB(255, 255, 0)
 local SupplyColor = Color3.fromRGB(0, 0, 255)
 local ScrapColor = Color3.fromRGB(0, 255, 0)
+local PlayerColor = Color3.fromRGB(255, 255, 255)
 
 -- Functions
 function AddHighlight(Parent, Color)
@@ -24,7 +25,7 @@ function AddHighlight(Parent, Color)
 end
 
 function HighlightObject(Name, Color)
-  local Object = Workspace:FindFirstChild(Name)
+  local Object = workspace:FindFirstChild(Name)
   if Object and not Object:FindFirstChild("Highlight") then
     AddHighlight(Object, Color)
   end
@@ -38,11 +39,13 @@ function HighlightObjects(Parent, Name, Color)
   end
 end
 -- Add Highlights --
-while true do
-  task.wait(1)
+while wait(1) do
   HighlightObject("Rake", RakeColor)
   HighlightObject("FlareGunPickUp", FlareColor)
   HighlightObjects(SupplyCrates, "Box", SupplyColor)
   HighlightObjects(ScrapSpawns, "Scrap", ScrapColor)
+  for _, v in ipairs(Players:GetChildren()) do
+    AddHighlight(v.Character, PlayerColor)
+  end
 end
 
